@@ -36,5 +36,22 @@ module RailsGraphqlApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # 不要なSpecは生成しないようにする
+    config.generators do |g|
+      g.test_framework :rspec,
+                       view_specs: false,
+                       helper_specs: false,
+                       controller_specs: false,
+                       routing_specs: false
+    end
+
+    # メッセージの日本語化
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+
+    # 日本時間にする
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end

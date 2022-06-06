@@ -23,7 +23,7 @@ gem 'puma', '~> 5.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 gem 'graphql'
 
@@ -38,5 +38,20 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  # migration時に読み込まないようにfalseにしておく
+  gem 'factory_bot_rails', require: false
+  gem 'gimei'
+  gem 'mock_redis'
+  gem 'rspec_junit_formatter'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'spring-commands-rspec'
+  gem 'timecop'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 日本語化
+gem 'rails-i18n'
