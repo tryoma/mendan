@@ -14,11 +14,9 @@ module Mutations
 
     class << self
       def field_name
-        @field_name ||= begin
-          name.split('::')
-              .last
-              .underscore
-        end
+        @field_name ||= name.split('::')
+                            .last
+                            .underscore
       end
     end
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Mutations下を先に読み込む
-Dir.glob(Rails.root.join('app', 'graphql', 'mutations', '*.rb')).sort.each do |f|
+Dir.glob(Rails.root.join('app', 'graphql', 'mutations', '*.rb')).each do |f|
   require f
 end
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Resolvers下を先に読み込む
-Dir.glob(Rails.root.join('app', 'graphql', 'resolvers', '*.rb')).sort.each do |f|
+Dir.glob(Rails.root.join('app', 'graphql', 'resolvers', '*.rb')).each do |f|
   require f
 end
 

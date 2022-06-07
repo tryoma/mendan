@@ -12,13 +12,11 @@ module Resolvers
 
     class << self
       def field_name
-        @field_name ||= begin
-          name.split('::')
-              .last
-              .gsub('Resolver', '')
-              .underscore
-              .to_sym
-        end
+        @field_name ||= name.split('::')
+                            .last
+                            .gsub('Resolver', '')
+                            .underscore
+                            .to_sym
       end
     end
 
